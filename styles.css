@@ -1,0 +1,714 @@
+/* ----------------------------------------
+  Fuente base
+---------------------------------------- */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #222;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------
+  Paleta de colores Whirlpool
+---------------------------------------- */
+:root {
+  --whirlpool-yellow: #ffbf00;
+  --whirlpool-gray: #f5f5f5;
+  --whirlpool-dark: #333333;
+  --whatsapp-green: #25d366;
+}
+
+/* ----------------------------------------
+  Utilidades generales
+---------------------------------------- */
+.bg-gray {
+  background-color: var(--whirlpool-gray);
+}
+
+.bg-yellow {
+  background-color: var(--whirlpool-yellow);
+}
+
+.text-yellow {
+  color: var(--whirlpool-yellow);
+}
+
+.text-dark {
+  color: var(--whirlpool-dark);
+}
+
+.btn-yellow {
+  background-color: var(--whirlpool-yellow);
+  color: #000;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+  background-color: #e6b700;
+  color: #000;
+}
+
+/* ----------------------------------------
+  Barra superior
+---------------------------------------- */
+.topbar {
+  background-color: var(--whirlpool-gray);
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+  color: #444;
+}
+
+.topbar a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.topbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.topbar a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ----------------------------------------
+  Encabezado / menú
+---------------------------------------- */
+.border-yellow {
+  border-bottom: 2px solid var(--whirlpool-yellow);
+}
+
+.navbar-brand img {
+  max-height: 48px;
+}
+
+.navbar-nav .nav-link {
+  color: #222;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--whirlpool-yellow);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--whirlpool-yellow);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Botón de WhatsApp y reutilizable */
+.btn-yellow {
+  background-color: var(--whirlpool-yellow);
+  color: #fff;
+  border-radius: 2rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-yellow:hover {
+  background-color: black;
+  color: var(--whirlpool-yellow);
+  text-decoration: none;
+}
+
+/* ----------------------------------------
+  Carrusel principal
+---------------------------------------- */
+.slide-bg {
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  color: #fff;
+}
+
+.carousel-caption h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  z-index: 3 !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  background-image: none;
+}
+
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 5px;
+}
+
+.carousel-control-prev-icon::after {
+  transform: rotate(135deg);
+}
+
+.carousel-control-next-icon::after {
+  transform: rotate(-45deg);
+}
+
+/* ----------------------------------------
+  Tarjetas de servicio
+---------------------------------------- */
+.card-service {
+  border: 1px solid #ddd;
+  border-left: 5px solid var(--whirlpool-yellow);
+  background-color: #fff;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card-service:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------
+  Iconos de atributos
+---------------------------------------- */
+.icon-box {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.icon-box i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--whirlpool-yellow);
+}
+
+/* ----------------------------------------
+  Preguntas Frecuentes
+---------------------------------------- */
+.faq-question {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--whirlpool-yellow);
+}
+
+/* ----------------------------------------
+  Footer
+---------------------------------------- */
+.footer {
+  background-color: var(--whirlpool-gray);
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------
+  WhatsApp flotante
+---------------------------------------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--whatsapp-green);
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ----------------------------------------
+  Mini Banner Call Me
+---------------------------------------- */
+.call-banner {
+  background-color: #353535 !important;
+  padding: 1.5rem 0;
+}
+
+.call-banner img {
+  max-height: 50px;
+  transition: all 0.3s ease;
+}
+
+.call-banner p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.phone-text {
+  font-size: 1.75rem !important; /* fs-2 equivalente */
+  white-space: nowrap; /* Evita salto de línea en escritorio */
+}
+
+.call-banner .btn-yellow {
+  font-size: 0.9rem;
+  border-radius: 2rem;
+  padding: 0.4rem 1.2rem;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.border-orange {
+  border: 2px solid #f7b400;
+  border-radius: 2rem;
+}
+
+/* ----------------------------------------
+  Características Servicio
+---------------------------------------- */
+
+.caracteristicas-servicio {
+  background-image: url("img/banner/servicio_tecnico_whirpool_slide_1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.caracteristicas-servicio .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro */
+  z-index: 1;
+}
+
+.caracteristicas-servicio .container {
+  position: relative;
+  z-index: 2;
+}
+
+.feature-box {
+  background-color: rgba(255, 193, 7, 0.08); /* Dorado suave */
+  border-radius: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.feature-box:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 193, 7, 0.15);
+}
+
+.feature-box i {
+  color: #ffc107; /* Color amarillo como el botón principal */
+}
+
+.caracteristicas-servicio .row .feature-box h5 {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* ----------
+  Servicios
+------------ */
+
+.servicios-whirlpool .card {
+  border-radius: 1rem;
+  background-color: #2c2c2c;
+  color: #fff;
+  /* Eliminamos h-100, dejamos que la altura sea natural */
+}
+
+.servicios-whirlpool .btn-link {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+.servicios-whirlpool .btn-outline-warning {
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+}
+
+/* ✅ Bootstrap base */
+.collapse {
+  transition: height 0.35s ease;
+}
+
+/* ✅ Transición personalizada solo si usamos .info-extra */
+.info-extra {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  max-height: 0;
+}
+
+.info-extra.show {
+  max-height: 500px; /* Ajustá esto según el contenido */
+}
+
+/* ✅ Card activa con efecto */
+.card.active-card {
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  border-color: #ffc107;
+}
+
+/* Botón para toggle de información */
+.btn-info-toggle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+}
+
+.btn-info-toggle:hover {
+  color: #ffc107;
+}
+
+/* ----------------------------------------
+  Formulario de Contacto
+---------------------------------------- */
+
+.bg-form {
+    background-color: #353535 !important;
+}
+
+.form-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm select {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  color: #212529;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #6c757d;
+}
+
+/* Botón con estilo Whirlpool */
+#contactForm .btn-outline-warning {
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid #ffc107;
+  color: #ffc107;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#contactForm .btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-service {
+  display: inline-block;
+  background-color: transparent;
+  color: #ffc107;
+  border: 2px solid #ffc107;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-service:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* ----------------------------------------
+  Footer
+---------------------------------------- */
+
+footer a {
+    text-decoration: none;
+    color: #ddd; /* gris claro legible */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f0c040; /* amarillo suave al hover */
+    text-decoration: underline;
+}
+
+/* Íconos de contacto y redes sociales */
+footer .contact-info i,
+footer .social-icons i {
+    color: #f0c040; /* íconos en amarillo dorado */
+    margin-right: 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-icons i:hover,
+footer .contact-info i:hover {
+    color: #fff; /* blanco al hover */
+    transform: scale(1.2);
+}
+
+footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer h5 {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Formulario */
+#contacto {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+/* Footer */
+footer.footer-dark {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+}
+
+
+
+/* ----------------------------------------
+  Estilo del botón flotante de WhatsApp
+---------------------------------------- */
+.whatsapp-float {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    bottom: 25px; /* MÁS ARRIBA */
+    right: 25px;  /* MÁS ALEJADO DEL BORDE */
+    background-color: #ffc107; /* Color principal del fondo */
+    color: #1c1e21; /* Ícono color amarillo */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px; /* Ícono más grande */
+    box-shadow: 0 0 8px 4px rgba(255, 193, 7, 0.7);
+    z-index: 9999;
+    text-decoration: none !important; /* 👈 ELIMINA subrayado */
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float i {
+    display: block;
+    line-height: 1;
+    pointer-events: none; /* Asegura que el clic se lo lleve el <a> */
+}
+
+/* Hover */
+.whatsapp-float:hover {
+    background-color: #1c1e21;
+    color: #ffc107;
+    box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.85);
+    cursor: pointer;
+}
+
+/* ----------------------------------------
+  Media Queries (ordenado de menor a mayor)
+---------------------------------------- */
+
+/* Móviles pequeños */
+@media (max-width: 575.98px) {
+  .btn-yellow {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .carousel-caption {
+    padding: 0.5rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .slide-bg {
+    padding: 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+
+  .phone-text {
+    font-size: 1.2rem !important; /* fs-5 aproximado */
+    white-space: normal; /* Permite salto de línea si hace falta */
+  }
+
+  .call-banner img {
+    max-height: 45px;
+  }
+}
+
+/* Móviles medianos / tablets pequeñas */
+@media (max-width: 767.98px) {
+  .slide-bg {
+    padding: 2rem 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.6rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .call-banner img {
+    max-height: 45px;
+  }
+
+  .phone-text {
+    font-size: 1.2rem !important; /* fs-5 aproximado */
+    white-space: normal;
+  }
+}
+
+/* Tablets y laptops pequeñas */
+@media (max-width: 991.98px) {
+  .topbar {
+    text-align: center;
+  }
+
+  .navbar-collapse {
+    background-color: #fff;
+    padding: 1rem;
+  }
+
+  .carousel-caption {
+    font-size: 0.9rem;
+  }
+
+  .icon-box {
+    padding: 0.5rem;
+  }
+
+  .slide-bg {
+    padding: 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .phone-text {
+    font-size: 1.2rem !important; /* Entre fs-3 y fs-4 */
+  }
+
+  .call-banner img {
+    max-height: 60px;
+  }
+}
+
+/* PC grandes */
+@media (min-width: 1200px) {
+  .call-banner img {
+    max-height: 65px;
+  }
+
+  .call-banner p {
+    font-size: 1.4rem;
+  }
+
+  .call-banner .btn-yellow {
+    font-size: 1.1rem;
+    padding: 0.75rem 2rem;
+  }
+}
