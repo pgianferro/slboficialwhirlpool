@@ -462,7 +462,7 @@ meta[name="format-detection"] {
 ---------------------------------------- */
 
 .bg-form {
-    background-color: #353535 !important;
+  background-color: #353535 !important;
 }
 
 .form-wrapper {
@@ -516,97 +516,143 @@ meta[name="format-detection"] {
   color: #000;
 }
 
+/* Campo de texto con borde dorado al hacer foco */
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+/* Asegura que no haya interferencias con validación */
+.form-control:focus:valid,
+.form-select:focus:valid,
+textarea.form-control:focus:valid {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
 /* ----------------------------------------
   Footer
 ---------------------------------------- */
 
+footer {
+  background-color: #212529;
+  color: #ddd;
+}
+
+/* Enlaces generales */
 footer a {
-    text-decoration: none;
-    color: #ddd; /* gris claro legible */
-    transition: color 0.3s ease;
+  color: #ddd;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado animado en hover */
+footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #f0c040;
+  transition: width 0.3s ease;
 }
 
 footer a:hover {
-    color: #f0c040; /* amarillo suave al hover */
-    text-decoration: underline;
+  color: #f0c040;
+}
+
+footer a:hover::after {
+  width: 100%;
 }
 
 /* Íconos de contacto y redes sociales */
 footer .contact-info i,
 footer .social-icons i {
-    color: #f0c040; /* íconos en amarillo dorado */
-    margin-right: 5px;
-    transition: transform 0.3s ease, color 0.3s ease;
+  color: #f0c040;
+  margin-right: 5px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 footer .social-icons i:hover,
 footer .contact-info i:hover {
-    color: #fff; /* blanco al hover */
-    transform: scale(1.2);
+  color: #fff;
+  transform: scale(1.2);
 }
 
+/* Listas sin estilos */
 footer ul {
-    padding-left: 0;
-    list-style: none;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
 }
 
 footer ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
+/* Títulos de sección */
 footer h5 {
-    color: #fff;
-    font-weight: bold;
+  color: #fff;
+  font-weight: bold;
 }
 
+/* Separador dorado arriba del footer */
+footer.footer-dark {
+  border-top: 3px solid #f0c040;
+}
+
+/* Aire sobre secciones */
 /* Formulario */
 #contacto {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
 }
 
 /* Footer */
 footer.footer-dark {
-    padding-top: 80px !important;
-    padding-bottom: 60px !important;
+  padding-top: 80px !important;
+  padding-bottom: 60px !important;
 }
-
-
 
 /* ----------------------------------------
   Estilo del botón flotante de WhatsApp
 ---------------------------------------- */
 .whatsapp-float {
-    position: fixed;
-    width: 70px;
-    height: 70px;
-    bottom: 25px; /* MÁS ARRIBA */
-    right: 25px;  /* MÁS ALEJADO DEL BORDE */
-    background-color: #ffc107; /* Color principal del fondo */
-    color: #1c1e21; /* Ícono color amarillo */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px; /* Ícono más grande */
-    box-shadow: 0 0 8px 4px rgba(255, 193, 7, 0.7);
-    z-index: 9999;
-    text-decoration: none !important; /* 👈 ELIMINA subrayado */
-    transition: all 0.3s ease;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 25px; /* MÁS ARRIBA */
+  right: 25px; /* MÁS ALEJADO DEL BORDE */
+  background-color: #ffc107; /* Color principal del fondo */
+  color: #1c1e21; /* Ícono color amarillo */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px; /* Ícono más grande */
+  box-shadow: 0 0 8px 4px rgba(255, 193, 7, 0.7);
+  z-index: 9999;
+  text-decoration: none !important; /* 👈 ELIMINA subrayado */
+  transition: all 0.3s ease;
 }
 
 .whatsapp-float i {
-    display: block;
-    line-height: 1;
-    pointer-events: none; /* Asegura que el clic se lo lleve el <a> */
+  display: block;
+  line-height: 1;
+  pointer-events: none; /* Asegura que el clic se lo lleve el <a> */
 }
 
 /* Hover */
 .whatsapp-float:hover {
-    background-color: #1c1e21;
-    color: #ffc107;
-    box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.85);
-    cursor: pointer;
+  background-color: #1c1e21;
+  color: #ffc107;
+  box-shadow: 0 0 10px 5px rgba(255, 193, 7, 0.85);
+  cursor: pointer;
 }
 
 /* ----------------------------------------
