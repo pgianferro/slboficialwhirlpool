@@ -55,6 +55,23 @@ body {
   color: #000;
 }
 
+/* Evita la detección automática de números como links */
+meta[name="format-detection"] {
+  content: "telephone=no";
+}
+
+/* Estilo para enlaces de teléfono detectados automáticamente */
+.phone-text {
+  color: #ffc107 !important;
+  text-decoration: none !important;
+}
+
+/* También para casos donde Safari ya aplicó su estilo */
+.phone-text a {
+  color: #ffc107 !important;
+  text-decoration: none !important;
+}
+
 /* ----------------------------------------
   Barra superior
 ---------------------------------------- */
