@@ -45,7 +45,6 @@ body {
   color: #000;
   border: none;
   padding: 0.6rem 1.2rem;
-  font-weight: 500;
   border-radius: 0.3rem;
   transition: background-color 0.3s ease;
 }
@@ -150,7 +149,6 @@ meta[name="format-detection"] {
   background-color: var(--whirlpool-yellow);
   color: #fff;
   border-radius: 2rem;
-  font-weight: 500;
   padding: 0.5rem 1.5rem;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -344,6 +342,7 @@ meta[name="format-detection"] {
 
 .call-banner .btn-yellow {
   font-size: 0.9rem;
+  font-weight: 700;
   border-radius: 2rem;
   padding: 0.4rem 1.2rem;
   white-space: normal;
@@ -379,13 +378,13 @@ meta[name="format-detection"] {
 }
 
 .feature-box {
-  background-color: rgba(255, 193, 7, 0.08); /* Dorado suave */
+  background-color: rgba(255, 193, 7, 0.25); /* Dorado suave */
   border-radius: 1rem;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .feature-box:hover {
   transform: scale(1.05);
-  background-color: rgba(255, 193, 7, 0.15);
+  background-color: rgba(255, 193, 7, 0.5);
 }
 
 .feature-box i {
